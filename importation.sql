@@ -8,7 +8,7 @@
 
 -- vacances.distance definition
 
-CREATE TABLE `distance` (
+CREATE TABLE `total` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `cumul_duree` int(11) DEFAULT NULL,
   `co2_emission` float DEFAULT NULL,
@@ -21,8 +21,8 @@ CREATE TABLE `distance` (
 CREATE TABLE `region` (
   `id` int(11) NOT NULL,
   `name` varchar(100) DEFAULT NULL,
-  `label` varchar(100) DEFAULT NULL,
-  `coord` varchar(100) DEFAULT NULL,
+  `longitude` FLOAT DEFAULT NULL,
+  `latitude` FLOAT DEFAULT NULL,
   `insee` int(11) DEFAULT NULL,
   `zip_code` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -37,18 +37,6 @@ CREATE TABLE `trajet` (
   `inseearrivee` int(11) DEFAULT NULL,
   `duree` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-
--- vacances.distance_trajet definition
-
-CREATE TABLE `distance_trajet` (
-  `id_distance` int(11) DEFAULT NULL,
-  `id_trajet` int(11) DEFAULT NULL,
-  KEY `distance_trajet_fk` (`id_distance`),
-  KEY `distance_trajet_fk_1` (`id_trajet`),
-  CONSTRAINT `distance_trajet_fk` FOREIGN KEY (`id_distance`) REFERENCES `distance` (`id`),
-  CONSTRAINT `distance_trajet_fk_1` FOREIGN KEY (`id_trajet`) REFERENCES `trajet` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
