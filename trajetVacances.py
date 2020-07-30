@@ -55,6 +55,16 @@ for each in matrice:
 # add lines
 folium.PolyLine(matrice, color="green", weight=2.5, opacity=1).add_to(my_map)
  
+
+# add title
+loc = 'Affichage du parcours Duree'
+title_html = '''
+             <h3 align="center" style="font-size:16px"><b>{}</b></h3>
+             '''.format(loc)   
+
+my_map.get_root().html.add_child(folium.Element(title_html))
+
+
 # Save map
 my_map.save(path)
 
@@ -93,7 +103,7 @@ for each in matrice:
     fill_opacity=1))
 
 # add title
-loc = 'Affichage du parcours'
+loc = 'Affichage du parcours CO2'
 title_html = '''
              <h3 align="center" style="font-size:16px"><b>{}</b></h3>
              '''.format(loc)   
