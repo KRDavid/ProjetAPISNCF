@@ -108,7 +108,7 @@ result = cur.fetchone()
 
 
 # add title
-loc = f'Affichage du parcours Duree, duree = {result[0]}h, CO2 = {result[1]}gEC'
+loc = f'Affichage du parcours CO2, duree = {result[0]}h, CO2 = {result[1]}gEC'
 title_html = '''
              <h3 align="center" style="font-size:16px"><b>{}</b></h3>
              '''.format(loc)   
