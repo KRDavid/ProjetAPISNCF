@@ -26,8 +26,7 @@ cur.execute("""SELECT ville.latitude, ville.longitude
                     WHERE trajet.id = total_trajet.id_trajet
                     AND    trajet.id = trajet_ville.id_trajet
                     AND    ville.id = trajet_ville.id_ville
-                    and total_trajet.id_total = '1'
-                    ORDER BY ville.longitude, ville.latitude;""")
+                    and total_trajet.id_total = '1';""")
 
 rqduree = cur.fetchall()
 
@@ -79,8 +78,7 @@ cur.execute("""SELECT ville.latitude, ville.longitude
                     WHERE trajet.id = total_trajet.id_trajet
                     AND    trajet.id = trajet_ville.id_trajet
                     AND    ville.id = trajet_ville.id_ville
-                    and total_trajet.id_total = '2'
-                    ORDER BY ville.longitude, ville.latitude;""")
+                    and total_trajet.id_total = '2';""")
 
 rqco2 = cur.fetchall()
 
