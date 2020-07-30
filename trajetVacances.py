@@ -91,6 +91,14 @@ for each in matrice:
     fill_color='blue',
     color = 'clear',
     fill_opacity=1))
+
+# add title
+loc = 'Affichage du parcours'
+title_html = '''
+             <h3 align="center" style="font-size:16px"><b>{}</b></h3>
+             '''.format(loc)   
+
+my_map.get_root().html.add_child(folium.Element(title_html))
     
 # add lines
 folium.PolyLine(matrice, color="green", weight=2.5, opacity=1).add_to(my_map)
