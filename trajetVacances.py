@@ -55,9 +55,12 @@ for each in matrice:
 # add lines
 folium.PolyLine(matrice, color="green", weight=2.5, opacity=1).add_to(my_map)
  
+cur.execute("""SELECT cumul_duree, cumul_co2 FROM total WHERE id = '1';""")
+result = cur.fetchone()
+
 
 # add title
-loc = 'Affichage du parcours Duree'
+loc = f'Affichage du parcours Duree, duree = {result[0]}h, CO2 = {result[1]}gEC'
 title_html = '''
              <h3 align="center" style="font-size:16px"><b>{}</b></h3>
              '''.format(loc)   
@@ -102,8 +105,12 @@ for each in matrice:
     color = 'clear',
     fill_opacity=1))
 
+cur.execute("""SELECT cumul_duree, cumul_co2 FROM total WHERE id = '2';""")
+result = cur.fetchone()
+
+
 # add title
-loc = 'Affichage du parcours CO2'
+loc = f'Affichage du parcours Duree, duree = {result[0]}h, CO2 = {result[1]}gEC'
 title_html = '''
              <h3 align="center" style="font-size:16px"><b>{}</b></h3>
              '''.format(loc)   
